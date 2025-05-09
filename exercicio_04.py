@@ -23,24 +23,31 @@ while True:
 preco_unitario = 0.0
 valor_total = 0.0
 mensagem_preco_aplicado = ""
+status_desconto = "" # Armazena a mensagem sobre o desconto
 
 if quantidade > 0:  # Processa apenas se a quantidade for positiva
     if quantidade < 3:
         preco_unitario = 1.00
         mensagem_preco_aplicado = f"Para {quantidade} banana(s), o preço aplicado é R$ {preco_unitario:.2f} por unidade."
+        status_desconto = "Compra sem desconto (menos de 3 unidades)."
     else:  # Quantidade >= 3
         preco_unitario = 0.80
         mensagem_preco_aplicado = f"Para {quantidade} bananas, o preço promocional aplicado é R$ {preco_unitario:.2f} por unidade."
+        status_desconto = "Desconto promocional aplicado (3 ou mais unidades)!"
     
     valor_total = quantidade * preco_unitario
     print(mensagem_preco_aplicado) # Exibe a mensagem sobre o preço aqui
+    
 elif quantidade == 0:
-    print("Nenhuma banana selecionada para compra.")
+    print("\nQue pena, não gostou de nenhum dos nossos cachos de banana? Esperamos sua próxima visita à Quitanda do Zé!")
 
 
 # Exibir o resumo da compra
 print("\n--- Resumo da Compra ---")
 print(f"Quantidade de bananas: {quantidade}")
+
 if quantidade > 0: # Mostrar preço unitário apenas se comprou algo e o preço foi definido
     print(f"Preço por banana (aplicado): R$ {preco_unitario:.2f}")
+    print(f"Status do desconto: {status_desconto}")
+    
 print(f"Valor total da compra: R$ {valor_total:.2f}")
