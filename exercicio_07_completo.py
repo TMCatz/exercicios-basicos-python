@@ -1,4 +1,4 @@
-# exercicio_07.py
+# exercicio_07+completo.py
 
 def calcular_fatorial(numero_para_calcular):
     """
