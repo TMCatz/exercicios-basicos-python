@@ -1,4 +1,4 @@
-# exercise_01.py
+# exercicio_01.py
 
 # Coleta o nome
 nome = input("Por favor, digite seu nome: ")
